@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>アンサ：トップページ</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="/">アンサ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">ホーム<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">アンサについて</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/question">質問</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <a href="/login" class="btn btn-primary">ログイン</a>
+                </span>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                    <h1>Theme example</h1>
+                    <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-8">
+                    <img src="https://2.bp.blogspot.com/-Vo_Zg1TcAz8/V5NDnu2l8WI/AAAAAAAA8dQ/bVr8Ybi7k9oSX8MH0Af9Kvv5MzW-ccwJQCLcB/s500/ai_pet_family.png" class="img-thumnail" width="200" height="200" alt="sample image" />
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-2 col-sm-1 col-md-1 col-lg-1">
+                    <img class="img-thumnail" style="min-width:36px;width:40px" src="https://3.bp.blogspot.com/-x5QmHRjuoCo/VaMN3jIrhNI/AAAAAAAAvfM/asNNBmt0RyY/s170/youngman_25.png">
+                </div>
+                <div class="col-10 col-sm-11 col-md-11 col-lg-11">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p class="card-text">質問や回答を入れるための箱です</p>
+                            <a href="/reply/1" class="btn btn-primary">返信する</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                    <i class="fa fa-reply fa-rotate-90"></i>
+                </div>
+                <div class="col-2 col-sm-1 col-md-1 col-lg-1">
+                    <img class="img-thumnail" style="min-width:36px;max-width:64px" src="https://3.bp.blogspot.com/-x5QmHRjuoCo/VaMN3jIrhNI/AAAAAAAAvfM/asNNBmt0RyY/s170/youngman_25.png">
+                </div>
+                <div class="col-9 col-sm-10 col-md-10 col-lg-10">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p class="card-text">質問や回答を入れるための箱です</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <div class="col-12">
+                    <form action="/answer" method="POST">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textarea" rows="3"></textarea>
+                            <button type="submit" class="btn btn-primary">送信する</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</html>

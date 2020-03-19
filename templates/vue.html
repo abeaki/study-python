@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>vue.js</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/cloak.css">
+    </head>
+    <body>
+        {% raw %}
+        <div id="app">
+            <my-hello>
+                <h3 slot="header">ようこそ速習Vue.jsへ</h3>
+                <p>一緒に勉強しましょう。</p>
+                <span slot="footer">WINGSプロジェクト</span>
+                <p>質問は掲示板へどうぞ。</p>
+                <a slot="footer" href="#">Q & A掲示板</a>
+            </my-hello>
+            <my-counter init="1"></my-counter>
+            <p v-cloak>{{ message }}</p>
+            <button v-on:click.once="onclick">現在時刻</button>
+            <p>{{ time }}</p>
+            <select v-model="language">
+                <option value="">話せる言語は</option>
+                <option>日本語</option>
+                <option>英語</option>
+                <option>ドイツ語</option>
+            </select>
+            <p>{{ language }}</p>
+            <form>
+                <label for="kb">1KB:</label>
+                <input type="radio" id="kb" v-model="unit" v-on:change="onchange" v-bind:value="{name:'キロバイト',size:1024}" /><br>
+                <label for="mb">1MB:</label>
+                <input type="radio" id="mb" v-model="unit" v-on:change="onchange" v-bind:value="{name:'メガバイト',size:1048576}" /><br>
+                <label for="gb">1GB:</label>
+                <input type="radio" id="gb" v-model="unit" v-on:change="onchange" v-bind:value="{name:'ギガバイト',size:1073742000}" /><br>
+                <label for="name">メールアドレス:</label>
+                <textarea v-bind:value="emails.join(';')" v-on:input="emails=$event.target.value.split(';')"></textarea>
+                <label for="show">表示／非表示</label>
+                <input type="checkbox" id="show" v-model="toggle" />
+                <select v-model="season">
+                    <option value="">季節を選択してください</option>
+                    <option value="spring">春</option>
+                    <option value="summer">夏</option>
+                    <option value="autumn">秋</option>
+                    <option value="winter">冬</option>
+                </select>
+                <label for="message">メッセージ</label>
+                <input type="text" id="message" v-bind="attrs" />
+            </form>
+            <ul>
+                <li v-for="email in emails">
+                    {{ email }}
+                </li>
+            </ul>
+            <div id="panel" v-if="toggle">
+                <h3>式の真偽に応じて表示／非表示を切り替える - v-if</h3>
+                <div>v-ifは</div>
+            </div>
+            <div v-else>
+                現在、非表示状態です。
+            </div>
+            <div v-if="season==='spring'">春はなのみの風の寒さや</div>
+            <div v-else-if="season==='summer'">夏も近づく八十八夜</div>
+            <div v-else-if="season==='autumn'">秋の夕日に照る山もみじ</div>
+            <div v-else-if="season==='winter'">さ霧消ゆる湊</div>
+            <div v-else>何も選択されていません</div>
+            <table class="table">
+                <th>No</th><th>ISBN</th><th>title</th><th>price</th>
+                <tr v-for="(b, i) in books">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ b.isbn }}</td>
+                    <td>{{ b.title }}</td>
+                    <td>{{ b.price }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endraw %}
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.min.js"></script>
+    <script src="/static/vuehello.js"></script>
+</html>
